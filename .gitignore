@@ -1,0 +1,14 @@
+# Python venv и зависимости
+.venv/
+__pycache__/
+*.pyc
+
+# PyCharm / IDEA
+.idea/
+
+# Docker build artifacts (если есть)
+*.tar.gz
+
+# OS system files
+.DS_Store
+Thumbs.db
