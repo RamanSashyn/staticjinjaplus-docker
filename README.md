@@ -43,12 +43,26 @@ docker build -f Dockerfile.slim -t yourdockerusername/staticjinjaplus:0.1.1-slim
 docker build -f Dockerfile.slim -t yourdockerusername/staticjinjaplus:develop-slim --build-arg STATIC_JINJA_VERSION=heads/main .
 ```
 
-## 🐳 Как запустить контейнер
+## 🐳 Как запустить контейнер и проверить работу
 
+1. Запуск контейнера
 ```bash
 docker run -it yourdockerusername/staticjinjaplus:0.1.1 bash
 ```
-
+2. Активировать виртуальное окружение:
+```bash
+source venv/bin/activate
+```
+3. Запустите генерацию сайта по шаблону:
+```bash
+python3 main.py
+```
+4. Убедитесь, что в выводе отображается успешная генерация HTML-файлов:
+```python-repl
+Rendering about.html...
+Rendering index.html...
+...
+```
 ---
 
 ## 🚀 Публикация образа в Docker Hub
