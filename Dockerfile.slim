@@ -12,7 +12,8 @@ COPY requirements.txt /StaticJinjaPlus/
 
 # Используем переменную версии (передается при билде)
 ARG STATIC_JINJA_VERSION
-ADD https://github.com/MrDave/StaticJinjaPlus/archive/refs/${STATIC_JINJA_VERSION}.tar.gz /StaticJinjaPlus.tar.gz
+ARG STATIC_JINJA_CHECKSUM
+ADD --checksum=${STATIC_JINJA_CHECKSUM} https://github.com/MrDave/StaticJinjaPlus/archive/refs/${STATIC_JINJA_VERSION}.tar.gz /StaticJinjaPlus.tar.gz
 
 # Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /StaticJinjaPlus
