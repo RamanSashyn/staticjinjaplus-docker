@@ -32,26 +32,24 @@ cd staticjinjaplus-docker
 | `0.1.1`     | `30d9424df1eddb73912b0e2ad5375fa2c876c8e30906bec91952dfb75dcf220b` |
 | `develop`   | `9adccb8fe17a40252df1a3acdea7edef4633b4ecaa8ba2dd5e0270f87ae43eab` |
 
-❗ Указывайте нужный хеш в `--build-arg STATIC_JINJA_CHECKSUM=...` при сборке.
-
 
 ## Примеры команды для сборки
 
 Сборка на базе Ubuntu с версией 0.1.1:
 ```bash
-docker build -f Dockerfile.ubuntu -t yourdockerusername/staticjinjaplus:0.1.1 --build-arg STATIC_JINJA_VERSION=tags/0.1.1 --build-arg STATIC_JINJA_CHECKSUM=sha256:30d9424df1eddb73912b0e2ad5375fa2c876c8e30906bec91952dfb75dcf220b .
+docker build -f ubuntu-0.1.1/Dockerfile -t ramansashyn/staticjinjaplus:0.1.1 .
 ```
 Сборка последнего коммита main-ветки на базе Ubuntu:
 ```bash
-docker build -f Dockerfile.ubuntu -t yourdockerusername/staticjinjaplus:develop --build-arg STATIC_JINJA_VERSION=heads/main --build-arg STATIC_JINJA_CHECKSUM=sha256:9adccb8fe17a40252df1a3acdea7edef4633b4ecaa8ba2dd5e0270f87ae43eab .
+docker build -f ubuntu-develop/Dockerfile -t ramansashyn/staticjinjaplus:develop .
 ```
 Сборка на базе Python Slim с версией 0.1.1:
 ```bash
-docker build -f Dockerfile.slim -t yourdockerusername/staticjinjaplus:0.1.1-slim --build-arg STATIC_JINJA_VERSION=tags/0.1.1 --build-arg STATIC_JINJA_CHECKSUM=sha256:30d9424df1eddb73912b0e2ad5375fa2c876c8e30906bec91952dfb75dcf220b .
+docker build -f python-slim-0.1.1/Dockerfile -t ramansashyn/staticjinjaplus:0.1.1-slim .
 ```
 Сборка последнего коммита main-ветки на базе Python Slim:
 ```bash
-docker build -f Dockerfile.slim -t yourdockerusername/staticjinjaplus:develop-slim --build-arg STATIC_JINJA_VERSION=heads/main --build-arg STATIC_JINJA_CHECKSUM=sha256:9adccb8fe17a40252df1a3acdea7edef4633b4ecaa8ba2dd5e0270f87ae43eab .
+docker build -f python-slim-develop/Dockerfile -t ramansashyn/staticjinjaplus:develop-slim .
 ```
 
 ## 🐳 Как запустить контейнер и проверить работу
